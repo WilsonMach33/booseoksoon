@@ -1,2 +1,2 @@
-# Team Booseoksoon
+# Booseoksoon
 # ROSTER: Jasmine, April, Wilson
