@@ -1,1 +1,3 @@
-# booseoksoon
+# Team Booseoksoon
+
+ROSTER: Jasmine, April, Wilson
