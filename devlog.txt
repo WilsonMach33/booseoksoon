@@ -13,3 +13,13 @@ Wilson, April, Jasmine -- 05/02/23 22:20
 --------------------------------------------------------------
 -Updated design doc
 --------------------------------------------------------------
+Wilson -- 05/02/23 21:10
+--------------------------------------------------------------
+-Updated design doc
+
+Feeback: 
+1. create list of program components
+2. note that users need to log in to access site functions
+3. add a page to generate songs based on user input
+4. label front/back/middle end
+--------------------------------------------------------------
