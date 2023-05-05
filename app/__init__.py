@@ -45,7 +45,7 @@ def register_page():
             return redirect(url_for("home_page"))
         return render_template("register.html", status="Login info is in use.")
     else:
-        return render_template("register.html", status="Passwords do not match.")
+        return render_template("register.html", status="Passwords do not match.", id=Session_id)
 
 @app.route("/anaylsis", methods=["GET", "POST"])
 def anaylsis_page():
