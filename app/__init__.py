@@ -3,17 +3,13 @@ from flask import Flask, session, render_template, request, redirect, url_for
 app = Flask(__name__)
 app.secret_key = "temp"
 
-@app.route("/", methods=["GET", "POST"])
-def home_page():
-    return render_template("test.html")
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if ( request.method == "GET" ):
         return render_template("login.html") # This is for accessing the page
     Input0 = request.form.get("username")
     Input1 = request.form.get("password")
-    # session_id = account_match(Input0, Input1)
+    session_id = account_match(Input0, Input1)
     if ( session_id != None ):
         session["ID"] = session_id
         return redirect(url_for("home_page"))
@@ -49,7 +45,6 @@ def register_page():
         return render_template("register.html", status="Login info is in use.")
     else:
         return render_template("register.html", status="Passwords do not match.")
-
 
 
 if __name__ == "__main__":
