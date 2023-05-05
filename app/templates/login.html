@@ -13,11 +13,30 @@
     </head>
 
     <body>
+        <div class="login-container">
+            Log in HERE!
 
+            <form class="login-form" method="POST">
+                <div class="form-floating">
+                    <input class="form-control" type="text" name="username" placeholder="Username" required>
+                    <label for="floatingInput">Username</label>
+                </div>
 
-
+                <div class="form-floating">
+                    <input class="form-control" type="password" name="password" placeholder="Password" required>
+                    <label for="floatingPassword">Password</label>
+                </div>
+                
+                <input class="signup-input" type="submit" name="submit" value="Login">
+            </form>
+        </div>
     </body>
 
-    <script src="../static/js/test.js"></script>
+    <form class="signup-form-login">
+        Don't have an account?
+        <br>
+        <button class="button" formaction="/register">Create an account</button>
+    </form>
 
+    <script src="../static/js/test.js"></script>
 </html>
