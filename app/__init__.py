@@ -14,7 +14,7 @@ def login():
     if ( session_id != None ):
         session["ID"] = session_id
         return redirect(url_for("home_page"))
-    return render_template("login.html", response="Username and passwords do not match.")
+    return render_template("login.html", status="Username and passwords do not match.")
 
 @app.route("/", methods=["GET", "POST"])
 def home_page():
@@ -46,6 +46,46 @@ def register_page():
         return render_template("register.html", status="Login info is in use.")
     else:
         return render_template("register.html", status="Passwords do not match.")
+
+@app.route("/anaylsis", methods=["GET", "POST"])
+def anaylsis_page():
+    if(session.get("ID", None) == None):
+        return redirect(url_for("login"))
+    session_user = F"{get_username(session['ID'])}"
+
+    return render_template("anaylsis.html", user=session_user)
+
+@app.route("/buzzfeed", methods=["GET", "POST"])
+def buzzfeed_page():
+    if(session.get("ID", None) == None):
+        return redirect(url_for("login"))
+    session_user = F"{get_username(session['ID'])}"
+
+    return render_template("buzzfeed.html", user=session_user)
+
+@app.route("/favorite_songs", methods=["GET", "POST"])
+def favorite_songs_page():
+    if(session.get("ID", None) == None):
+        return redirect(url_for("login"))
+    session_user = F"{get_username(session['ID'])}"
+
+    return render_template("favorite_songs.html", user=session_user)
+
+@app.route("/profile", methods=["GET", "POST"])
+def profile_page():
+    if(session.get("ID", None) == None):
+        return redirect(url_for("login"))
+    session_user = F"{get_username(session['ID'])}"
+
+    return render_template("profile.html", user=session_user)
+
+@app.route("/user_stats", methods=["GET", "POST"])
+def user_stats_page():
+    if(session.get("ID", None) == None):
+        return redirect(url_for("login"))
+    session_user = F"{get_username(session['ID'])}"
+
+    return render_template("user_stats.html", user=session_user)
 
 
 if __name__ == "__main__":
