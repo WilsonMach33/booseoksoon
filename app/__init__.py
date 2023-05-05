@@ -1,4 +1,5 @@
 from flask import Flask, session, render_template, request, redirect, url_for
+from db import * 
 
 app = Flask(__name__)
 app.secret_key = "temp"
