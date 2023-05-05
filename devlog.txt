@@ -31,4 +31,8 @@ April -- 05/04/23 9:23
 -Organized directory to correct format
 --------------------------------------------------------------
 
-
+April -- 05/05/23 9:29 
+--------------------------------------------------------------
+-Created routes for login and register 
+-Created all template files and have routes to each one 
+--------------------------------------------------------------
