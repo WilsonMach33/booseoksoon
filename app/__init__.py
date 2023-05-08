@@ -27,6 +27,7 @@ def home_page():
     else:
         session_user = F"{get_username(session['ID'])}"
         model_all()
+        print(session_user)
     return render_template("home_page.html", user=session_user) #status=stat
 
 @app.route("/logout", methods=["GET", "POST"])
