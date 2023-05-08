@@ -37,7 +37,7 @@ def register_page():
         return render_template("register.html")
     Input0 = request.form.get("username")
     Input1 = request.form.get("password")
-    Input2 = request.form.get("password_confirm")
+    Input2 = request.form.get("confirmation")
     # issue of session_id referenced before assignment in line 50
     # Session_id = register_new_user(Input0, Input1)
     if Input1 == Input2:
