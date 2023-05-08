@@ -44,3 +44,9 @@ Jasmine -- 05/08/23 12:10
 does and not accurately reflecting the register inputs
 -Started parsing .csv file
 --------------------------------------------------------------
+
+April & Jasmine -- 05/08/23 9:28
+--------------------------------------------------------------
+-Reformatted dictionary
+-Worked on displaying dictionary on home page
+--------------------------------------------------------------

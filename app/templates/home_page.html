@@ -21,10 +21,14 @@
                 <th>Name</th>
                 <th>Album</th>
             </tr>
+            <p> {{data}}</p>
+
             {% for item in data %}
+            <p> {{item[]}} </p>
+            <p> {{item}} </p>
                 <tr>
-                    <th>{{item.name}}</th>
-                    <th>{{item.album}}</th>
+                    <th>{{item["name"]}}</th>
+                    <th>{{item}}</th>
                 </tr>
             {% endfor %}
         </table>
