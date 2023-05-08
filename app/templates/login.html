@@ -13,32 +13,34 @@
     </head>
 
     <body>
-        <div class="login-container">
-            Log in HERE!
+        <div class="d-flex justify-content-center">
+            <h1>LOGIN</h1>
+        </div>
+        <div class="login-container d-flex justify-content-center">
 
             <form class="login-form" method="POST">
                 <div class="form-floating">
                     <input class="form-control" type="text" name="username" placeholder="Username" required>
                     <label for="floatingInput">Username</label>
                 </div>
-
+                <br>
                 <div class="form-floating">
                     <input class="form-control" type="password" name="password" placeholder="Password" required>
                     <label for="floatingPassword">Password</label>
                 </div>
-                
+                <br>
                 <input class="signup-input" type="submit" name="submit" value="Login">
             </form>
-
             <p> {{status}} </p>
         </div>
-    </body>
-
-    <form class="signup-form-login">
-        Don't have an account?
         <br>
-        <button class="button" formaction="/register">Create an account</button>
-    </form>
+        <div class="d-flex justify-content-center">
+            <form class="signup-form-login">
+                <p>Don't Have an Account?</p>
+                <button class="button btn-lg btn-outline-primary" formaction="/register">Create an account</button>
+            </form>
+        </div>>
+    </body>
 
     <script src="../static/js/test.js"></script>
 </html>

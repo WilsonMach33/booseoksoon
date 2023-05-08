@@ -13,22 +13,22 @@
     </head>
 
     <body>
-
-    <button class="button" formaction="/logout">Logout</button>
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-outline-primary btn-lg" formaction="/logout">Logout</button>
+    </div>
     <div>
-        <table id="data">
-            <tr>
-                <th>Name</th>
-                <th>Album</th>
+        <table id="data" class="table align-middle">
+            <tr class="table-danger">
+                <th>ALBUM</th>
+                <th>SONGS</th>
             </tr>
-            <p> {{data}}</p>
 
-            {% for item in data %}
-            <p> {{item[]}} </p>
-            <p> {{item}} </p>
+            {% for album in data %}
                 <tr>
-                    <th>{{item["name"]}}</th>
-                    <th>{{item}}</th>
+                    <th class="table-primary">{{album}}</th>
+                    {% for song in data[album] %}
+                        <td>{{song}}</td>
+                    {% endfor %}
                 </tr>
             {% endfor %}
         </table>

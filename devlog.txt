@@ -50,3 +50,9 @@ April & Jasmine -- 05/08/23 9:28
 -Reformatted dictionary
 -Worked on displaying dictionary on home page
 --------------------------------------------------------------
+
+Jasmine -- 05/08/23 17:16
+--------------------------------------------------------------
+-Worked on some bootstrap of the current pages available
+-Displayed Taylor's every album and the songs within each album
+--------------------------------------------------------------
