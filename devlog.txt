@@ -36,3 +36,11 @@ April -- 05/05/23 9:29
 -Created routes for login and register 
 -Created all template files and have routes to each one 
 --------------------------------------------------------------
+
+Jasmine -- 05/08/23 12:10
+--------------------------------------------------------------
+-Fixed variable referenced before assignment error
+-Fixed always returning "Password doesn't match" even when it
+does and not accurately reflecting the register inputs
+-Started parsing .csv file
+--------------------------------------------------------------
