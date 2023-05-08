@@ -38,6 +38,8 @@ def register_page():
     Input0 = request.form.get("username")
     Input1 = request.form.get("password")
     Input2 = request.form.get("password_confirm")
+    # issue of session_id referenced before assignment in line 50
+    # Session_id = register_new_user(Input0, Input1)
     if Input1 == Input2:
         Session_id = register_new_user(Input0, Input1)
         if( Session_id != -1 ): # see if new user info is already in use, if not then sign them in
@@ -45,7 +47,7 @@ def register_page():
             return redirect(url_for("home_page"))
         return render_template("register.html", status="Login info is in use.")
     else:
-        return render_template("register.html", status="Passwords do not match.", id=Session_id)
+        return render_template("register.html", status="Passwords do not match.")
 
 @app.route("/anaylsis", methods=["GET", "POST"])
 def anaylsis_page():
