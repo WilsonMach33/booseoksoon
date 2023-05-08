@@ -15,7 +15,20 @@
     <body>
 
     <button class="button" formaction="/logout">Logout</button>
-
+    <div>
+        <table id="data">
+            <tr>
+                <th>Name</th>
+                <th>Album</th>
+            </tr>
+            {% for item in data %}
+                <tr>
+                    <th>{{item.name}}</th>
+                    <th>{{item.album}}</th>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
 
     </body>
 

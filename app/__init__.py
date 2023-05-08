@@ -20,6 +20,7 @@ def login():
 
 @app.route("/", methods=["GET", "POST"])
 def home_page():
+    dataDict = model_all()
     if(session.get("ID", None) == None):
         return redirect(url_for("login"))
     elif (get_username(session.get("ID")) == None):
@@ -28,7 +29,7 @@ def home_page():
         session_user = F"{get_username(session['ID'])}"
         model_all()
         print(session_user)
-    return render_template("home_page.html", user=session_user) #status=stat
+    return render_template("home_page.html", data=dataDict, user=session_user) #status=stat
 
 @app.route("/logout", methods=["GET", "POST"])
 def logout():
@@ -103,7 +104,7 @@ def model_all():
         for row in r:
             dataDict["name"].append(row["name"])
             dataDict["album"].append(row["album"])
-            print(dataDict)
+        return dataDict
 
 if __name__ == "__main__":
     app.debug = True
