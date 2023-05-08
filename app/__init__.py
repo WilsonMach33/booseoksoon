@@ -1,5 +1,7 @@
 from flask import Flask, session, render_template, request, redirect, url_for
 from db import * 
+import sqlite3
+import csv
 
 app = Flask(__name__)
 app.secret_key = "temp"
@@ -24,6 +26,7 @@ def home_page():
         return redirect(url_for("login"))
     else:
         session_user = F"{get_username(session['ID'])}"
+        model_all()
     return render_template("home_page.html", user=session_user) #status=stat
 
 @app.route("/logout", methods=["GET", "POST"])
@@ -89,6 +92,17 @@ def user_stats_page():
 
     return render_template("user_stats.html", user=session_user)
 
+# modeling .csv data
+def model_all():
+    dataDict = {}
+    dataDict["name"] = []
+    dataDict["album"] = []
+    with open('spotify_taylorswift.csv') as f:
+        r = csv.DictReader(f)
+        for row in r:
+            dataDict["name"].append(row["name"])
+            dataDict["album"].append(row["album"])
+            print(dataDict)
 
 if __name__ == "__main__":
     app.debug = True
