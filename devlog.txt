@@ -45,7 +45,7 @@ does and not accurately reflecting the register inputs
 -Started parsing .csv file
 --------------------------------------------------------------
 
-April & Jasmine -- 05/08/23 9:28
+April & Jasmine -- 05/08/23 09:28
 --------------------------------------------------------------
 -Reformatted dictionary
 -Worked on displaying dictionary on home page
@@ -56,3 +56,18 @@ Jasmine -- 05/08/23 17:16
 -Worked on some bootstrap of the current pages available
 -Displayed Taylor's every album and the songs within each album
 --------------------------------------------------------------
+
+Jasmine -- 05/09/23 09:10
+--------------------------------------------------------------
+-Figuring out graph schematics and scaling
+-Graph will show five different lines, each covering a different
+aspect of T.S.'s songs---one graph for each album and one main
+graph with the variable of time to show how her music changed
+over time
+--------------------------------------------------------------
+
+April & Jasmine --- 05/09/23 09:13
+--------------------------------------------------------------
+-Fixed logout from home page
+--------------------------------------------------------------
+
