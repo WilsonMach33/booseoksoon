@@ -64,6 +64,9 @@ Jasmine -- 05/09/23 09:10
 aspect of T.S.'s songs---one graph for each album and one main
 graph with the variable of time to show how her music changed
 over time
+-Music visualizations instead
+-https://flowingdata.com/tag/music/
+-https://flowingdata.com/2021/04/22/visual-deconstruction-of-popular-songs/
 --------------------------------------------------------------
 
 April & Jasmine --- 05/09/23 09:13
