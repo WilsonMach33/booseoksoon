@@ -5,6 +5,7 @@ db = sqlite3.connect(DB_FILE, check_same_thread=False)
 c = db.cursor() # Create the three tables if they dont exist yet
 c.executescript(""" 
     create TABLE if NOT EXISTS user(u_id int primary key, username varchar(20), password varchar(30));
+    create TABLE if NOT EXISTS songs(u_id int primary key, title text, album text, date text, length int, popularity float, danceability float, acousticness float, energy float)
 """)
 c.close()
 

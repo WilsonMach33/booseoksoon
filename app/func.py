@@ -14,3 +14,5 @@ def model_all():
                 dataDict[albumName] = []
             dataDict[albumName].append(row["name"])
     return dataDict
+
+def 
