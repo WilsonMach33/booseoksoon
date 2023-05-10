@@ -1,4 +1,5 @@
 import sqlite3
+import csv
 DB_FILE = "file.db"
 
 db = sqlite3.connect(DB_FILE, check_same_thread=False)
@@ -54,3 +55,21 @@ def account_match(username, password): # if it matches, return u_id, else return
         return u_id[0]
     else:
         return None
+
+def model_all():
+    c = db.cursor()
+    id = 0
+    with open('/home/students/2023/ali34/booseoksoon/app/spotify_taylorswift.csv') as f:
+        r = csv.DictReader(f)
+        for row in r:
+            #c.execute("inset into songs values(?, ?, ?, ?, ?, ?, ?, ?, ?)", (id, row["name"], row["album"], row["release_date"], row["length"], row["popularity"], row["danceability"], row["acousticness"], row["energy"]))
+            c.exectue("inset into songs values(?, ?)", (id, row["name"]))
+            id = id+1
+
+
+    db.commit()
+    c.close()
+
+#name,album,artist,release_date,length,popularity,danceability,acousticness,energy,instrumentalness,liveness,loudness,speechiness,valence,tempo
+
+model_all()
