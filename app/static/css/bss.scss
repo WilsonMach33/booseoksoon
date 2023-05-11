@@ -4,6 +4,23 @@ $background-color3: rgb(206,192,252);
 $background-color4: rgb(174,192,252);
 $background-color5: rgb(148,225,234);
 
+@mixin navigation() {
+    color: $background-color4;
+    background-color: navy;
+    float: left;
+    font-size: 20px;
+
+    a:hover {
+        background-color: $background-color4;
+        color: navy;
+    }
+}
+
+@mixin drop() {
+    overflow: hidden;
+    padding: 5px;
+}
+
 .container{
     background-color: $background-color1;
 }
@@ -17,4 +34,16 @@ $background-color5: rgb(148,225,234);
 }
 
 .login-container{
+}
+
+.navbar{
+    @include navigation;
+}
+
+.dropdown{
+    @include drop;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
