@@ -86,3 +86,5 @@ April --- 05/10/23 9:30
 --------------------------------------------------------------
 -Worked on transferring data from CSV file over to SQLITE
 --------------------------------------------------------------
+
+nav bar, sass, fixing sqlite, d3 testing
