@@ -1,5 +1,6 @@
 import csv
 import sqlite3
+import random 
 
 # modeling .csv data
 def model_all():
@@ -14,3 +15,9 @@ def model_all():
                 dataDict[albumName] = []
             dataDict[albumName].append(row["name"])
     return dataDict
+
+def rand_func():
+    rand = random.randint(0,170)
+    print(rand)
+
+rand_func()

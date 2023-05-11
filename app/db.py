@@ -4,9 +4,9 @@ DB_FILE = "file.db"
 
 db = sqlite3.connect(DB_FILE, check_same_thread=False)
 c = db.cursor() # Create the three tables if they dont exist yet
-c.executescript(""" 
+c.executescript("""
     create TABLE if NOT EXISTS user(u_id int primary key, username varchar(20), password varchar(30));
-    create TABLE if NOT EXISTS songs(u_id int primary key, title text, album text, date text, length int, popularity float, danceability float, acousticness float, energy float)
+    create TABLE if NOT EXISTS songs(u_id int primary key, title text, album text, date text, length int, popularity float, danceability float, acousticness float, energy float, instrumentalness float, liveness float, loudness float, speechiness float, valence float, tempo float)
 """)
 c.close()
 
@@ -62,14 +62,13 @@ def model_all_sql():
     with open('spotify_taylorswift.csv') as f:
         r = csv.DictReader(f)
         for row in r:
-            c.execute("insert into songs values(?, ?, ?, ?, ?, ?, ?, ?, ?)", (id, row["name"], row["album"], row["release_date"], row["length"], row["popularity"], row["danceability"], row["acousticness"], row["energy"]))
+            c.execute("insert into songs values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (id, row["name"], row["album"], row["release_date"], row["length"], row["popularity"], row["danceability"], row["acousticness"], row["energy"], row["instrumentalness"], row["liveness"], row["loudness"], row["speechiness"], row["valence"], row["tempo"]))
             #c.execute("insert into songs values(?, ?)", (id, row["name"]))
             id = id+1
-
 
     db.commit()
     c.close()
 
-#name,album,artist,release_date,length,popularity,danceability,acousticness,energy,instrumentalness,liveness,loudness,speechiness,valence,tempo
+
 
 model_all_sql()
