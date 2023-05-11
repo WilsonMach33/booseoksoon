@@ -72,4 +72,4 @@ def model_all():
 
 #name,album,artist,release_date,length,popularity,danceability,acousticness,energy,instrumentalness,liveness,loudness,speechiness,valence,tempo
 
-model_all()
+# model_all()

@@ -76,3 +76,8 @@ April & Jasmine --- 05/09/23 09:13
 -Taking data from CSV files containg data about Taylor Swift songs and putting into sqlite. Pulling infromation from SQLITE and graphing that.
 --------------------------------------------------------------
 
+Wilson --- 05/09/23 09:22
+--------------------------------------------------------------
+-Added scss files for sass and css mapping
+-Added color scheme for log in page
+--------------------------------------------------------------
