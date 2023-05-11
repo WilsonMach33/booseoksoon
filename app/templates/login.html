@@ -12,12 +12,12 @@
         <link rel="stylesheet" href="../static/css/bss.css">
     </head>
 
-    <body>
+    <body class="body">
         <div class="d-flex justify-content-center">
             <h1>LOGIN</h1>
         </div>
-        <div class="login-container d-flex justify-content-center">
 
+        <div class="login-container d-flex justify-content-center">
             <form class="login-form" method="POST">
                 <div class="form-floating">
                     <input class="form-control" type="text" name="username" placeholder="Username" required>
@@ -25,13 +25,12 @@
                 </div>
                 <br>
                 <div class="form-floating">
-                    <input class="form-control" type="password" name="password" placeholder="Password" required>
+                    <input class="form-control" type="p assword" name="password" placeholder="Password" required>
                     <label for="floatingPassword">Password</label>
                 </div>
                 <br>
-                <input class="signup-input" type="submit" name="submit" value="Login">
+                <input class="button signup-input" type="submit" name="submit" value="Login">
             </form>
-            <p> {{status}} </p>
         </div>
         <br>
         <div class="d-flex justify-content-center">
