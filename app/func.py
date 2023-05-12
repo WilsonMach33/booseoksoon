@@ -1,7 +1,6 @@
 import csv
 import sqlite3
 import random 
-
 # modeling .csv data
 def model_all():
     dataDict = {}

@@ -69,6 +69,3 @@ def model_all_sql():
     db.commit()
     c.close()
 
-
-
-model_all_sql()
