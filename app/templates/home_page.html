@@ -14,17 +14,27 @@
 
     <body>
 
-    <div class="navbar">
-        <a href="buzzfeed.html">Quiz</a>
-        <a href="register.html">Register</a>
-        <button class="dropdown">
-            Profile
-        </button>
-        <div class="dropdown-content">
-            <a href="user_stats.html">Stats</a>
-            <a href="favorite_songs.html">Songs</a>
-            <a href="analysis.html">Analysis</a>
-        </div>
+    <!--
+        For some reason, even when copying the dropdown menu off Bootstrap's
+        official documentation, the dropdown menu still doesn't show when toggled.
+        I suspect an issue with compatibility with the machine or the browser.
+        Will do further testing at home.
+    -->    
+    <div>
+        <li class="navbar">
+            <a href="buzzfeed.html">Quiz</a>
+            <a href="register.html">Register</a>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button">
+                    Profile
+                </button>
+                <div class="dropdown-menu"> 
+                    <a class="dropdown-item" href="stats.html">Stats</a>
+                    <a class="dropdown-item" href="songs.html">Songs</a>
+                    <a class="dropdown-item" href="analysis.html">Analysis</a>
+                </div>
+            </div>
+        </li>
     </div>
 
     <div class="d-flex justify-content-center">

@@ -16,11 +16,6 @@ $background-color5: rgb(148,225,234);
     }
 }
 
-@mixin drop() {
-    overflow: hidden;
-    padding: 5px;
-}
-
 .container{
     background-color: $background-color1;
 }
@@ -33,17 +28,6 @@ $background-color5: rgb(148,225,234);
     background-color: $background-color1;
 }
 
-.login-container{
-}
-
 .navbar{
     @include navigation;
-}
-
-.dropdown{
-    @include drop;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
