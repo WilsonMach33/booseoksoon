@@ -69,3 +69,54 @@ def model_all_sql():
     db.commit()
     c.close()
 
+def get_title(id):
+    c = db.cursor()
+    c.execute("select title FROM songs WHERE u_id = ?", (id, ))
+    result = c.fetchone()
+    c.close()
+    if(result == None):
+        return None
+    return result[0]
+def get_album(id):
+    c = db.cursor()
+    c.execute("select album FROM songs WHERE u_id = ?", (id, ))
+    result = c.fetchone()
+    c.close()
+    if(result == None):
+        return None
+    return result[0]
+def get_date(id):
+    c = db.cursor()
+    c.execute("select release_date FROM songs WHERE u_id = ?", (id, ))
+    result = c.fetchone()
+    c.close()
+    if(result == None):
+        return None
+    return result[0]
+
+#returns data for a certain song
+#u_id[0], title[1], album[2], date[3], length[4], popularity[5], danceability[6], acousticness[7], energy[8], instrumentalness[9], liveness[10], loudness[11], speechiness[12], valence[13], tempo[14]
+def get_data(id):
+    c = db.cursor()
+    c.execute("select * FROM songs WHERE u_id = ?", (id, ))
+    result = c.fetchone()
+    c.close()
+    if(result == None):
+        return None
+    return result
+
+#returns all data for a column of values
+def get_col():
+    c = db.cursor()
+    result = []
+    id = 0
+    while (id <= 170):
+        c.execute("select liveness FROM songs WHERE u_id = ?", (id, ))
+        result.append(c.fetchone()[0])
+        id = id+1
+    c.close()
+    if(result == None):
+        return None
+    return result 
+
+print(get_col())

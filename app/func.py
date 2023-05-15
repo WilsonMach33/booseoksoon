@@ -17,6 +17,7 @@ def model_all():
 
 def rand_func():
     rand = random.randint(0,170)
-    print(rand)
+    return rand
 
-rand_func()
+def match_song(input):
+    liveness = get_col()
