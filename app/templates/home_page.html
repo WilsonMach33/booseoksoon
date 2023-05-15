@@ -22,16 +22,14 @@
     -->
     <div>
         <li class="navbar">
-            <a href="buzzfeed.html">Quiz</a>
-            <a href="register.html">Register</a>
+            <form><button formaction="/buzzfeed">Buzzfeed</button></form>
+            <form><button formaction="/register">Register</button></form>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button">
-                    Profile
-                </button>
-                <div class="dropdown-menu"> 
-                    <a class="dropdown-item" href="stats.html">Stats</a>
-                    <a class="dropdown-item" href="songs.html">Songs</a>
-                    <a class="dropdown-item" href="analysis.html">Analysis</a>
+                <form><button formaction="/profile">Profile</button></form>
+                <div class="dropdown-item"> 
+                    <form class="dropdown-item"><button formaction="/analysis">Analysis</button></form>
+                    <form class="dropdown-item"><button formaction="/favorite_songs">Songs</button></form>
+                    <form class="dropdown-item"><button formaction="/user_stats">Stats</button></form>
                 </div>
             </div>
         </li>
