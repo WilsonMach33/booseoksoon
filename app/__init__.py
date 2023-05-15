@@ -55,13 +55,13 @@ def register_page():
     else:
         return render_template("register.html", status="Passwords do not match.")
 
-@app.route("/anaylsis", methods=["GET", "POST"])
+@app.route("/analysis", methods=["GET", "POST"])
 def anaylsis_page():
     if(session.get("ID", None) == None):
         return redirect(url_for("login"))
     session_user = F"{get_username(session['ID'])}"
 
-    return render_template("anaylsis.html", user=session_user)
+    return render_template("analysis.html", user=session_user)
 
 @app.route("/buzzfeed", methods=["GET", "POST"])
 def buzzfeed_page():
