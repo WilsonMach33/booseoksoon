@@ -39,10 +39,6 @@ def find_closest(col, val):
             return value[index][0] 
     return value[index][0]
 
-p#rint(match_song("liveness", 0.1211))
-def match_song(input):
-    liveness = get_col()
-
 def buzzfeed():
     quizDict = {}
     quizDict[1] = [["danceability"], ["click me", "no", "no", "no"], [0.58, 0, 0, 0]]
