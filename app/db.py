@@ -119,4 +119,14 @@ def get_col():
         return None
     return result 
 
-print(get_col())
+# print(get_col())
+
+# prints all column data
+def get_column(column_name):
+    c = db.cursor()
+    c.execute("select " + column_name + " FROM songs limit 10")
+    result = c.fetchall()
+    c.close()
+    return result
+
+print(get_column("date"))
