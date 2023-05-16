@@ -94,6 +94,17 @@ def get_date(id):
         return None
     return result[0]
 
+#input column and value that matches 
+#return u_id that matches 
+def get_id(col, num):
+    c = db.cursor()
+    c.execute("select u_id FROM songs WHERE " + col + " = ?", (num, ))
+    result = c.fetchone()
+    c.close()
+    if(result == None):
+        return None
+    return result[0]
+
 #returns data for a certain song
 #u_id[0], title[1], album[2], date[3], length[4], popularity[5], danceability[6], acousticness[7], energy[8], instrumentalness[9], liveness[10], loudness[11], speechiness[12], valence[13], tempo[14]
 def get_data(id):
@@ -124,9 +135,9 @@ def get_col():
 # prints all column data
 def get_column(column_name):
     c = db.cursor()
-    c.execute("select " + column_name + " FROM songs limit 10")
+    c.execute("select " + column_name + " FROM songs")
     result = c.fetchall()
     c.close()
     return result
 
-print(get_column("date"))
+#print(get_column("date"))

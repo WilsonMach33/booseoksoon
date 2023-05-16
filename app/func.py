@@ -1,6 +1,8 @@
 import csv
 import sqlite3
 import random 
+from db import * 
+
 # modeling .csv data
 def model_all():
     dataDict = {}
@@ -19,5 +21,22 @@ def rand_func():
     rand = random.randint(0,170)
     return rand
 
-def match_song(input):
-    liveness = get_col()
+#input col(what column component) and input val(value of the column)
+#return value of closest number
+#pair with get_id(col, find_closest(col, val))
+def find_closest(col, val):
+    value = get_column(col)
+    value = sorted(value)
+    index = 0
+    while (index < 170):
+        maxx = value[index][0]
+        if (maxx < val):
+            index += 1
+        else:
+            prev = value[index-1][0]
+            if (abs(val-prev) < abs(val-maxx)):
+                return value[index-1][0]
+            return value[index][0] 
+    return value[index][0]
+
+p#rint(match_song("liveness", 0.1211))
