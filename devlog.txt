@@ -133,3 +133,9 @@ Wilson --- 05/15/23 9:30
 -Tested D3 line charts parameters
 -Added get_column(column_name)to db.py to get data from columns
 --------------------------------------------------------------
+
+Wilson --- 05/16/23 9:30
+--------------------------------------------------------------
+-added line_chart.js
+-added nav bar to home_page.html
+--------------------------------------------------------------
