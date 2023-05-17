@@ -85,4 +85,5 @@ function LineChart(data){
 }
 
 // funtion test
-LineChart(songdata);
+// LineChart(songdata);
+console.log(songdata);
