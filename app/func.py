@@ -46,5 +46,10 @@ def buzzfeed():
     quizDict[3] = [["energy"], ["click me", "no", "no", "no"], [0.491, 0, 0, 0]]
     quizDict[4] = [["liveness"], ["click me", "no", "no", "no"], [0.121, 0, 0, 0]]
     # this song is supposed to be 'Tim McGraw'
+    return quizDict
+
+buzzfeed()
+
+
 
     

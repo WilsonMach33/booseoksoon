@@ -68,11 +68,12 @@ def analysis_page():
 
 @app.route("/buzzfeed", methods=["GET", "POST"])
 def buzzfeed_page():
+    quizDict = buzzfeed()
     if(session.get("ID", None) == None):
         return redirect(url_for("login"))
     session_user = F"{get_username(session['ID'])}"
 
-    return render_template("buzzfeed.html", user=session_user)
+    return render_template("buzzfeed.html", data=quizDict, user=session_user)
 
 @app.route("/favorite_songs", methods=["GET", "POST"])
 def favorite_songs_page():

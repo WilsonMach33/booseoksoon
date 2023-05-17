@@ -15,8 +15,8 @@
 
     <body>
 
-        <div>
-            <div class="ques-container">Question</div>
+        <div class="card">
+            <!-- <div class="ques-container">Question</div>
             <div class="option-container">
                 <button class="option"> {{option1}} </button>
                 <button class="option"> {{option2}} </button>
@@ -25,7 +25,17 @@
             </div>
             <div>
                 <button class="submit"> {{submit}} </button>
-            </div>
+            </div> -->
+
+            {% for question in data %}
+                <div class="card-header"> {{question}} </div>
+                <div class="card-body">
+                    <input class="form-check-input" type="radio" id="choice">
+                    <label class="form-check-label" for="choice">
+                        {{[data][question]}}
+                    </label>
+                </div>
+            {% endfor %}
         </div>
 
     </body>
