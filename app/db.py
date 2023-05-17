@@ -132,7 +132,7 @@ def get_col():
 
 # print(get_col())
 
-# prints all column data
+# get all column data
 def get_column(column_name):
     c = db.cursor()
     c.execute("select " + column_name + " FROM songs")
@@ -140,4 +140,12 @@ def get_column(column_name):
     c.close()
     return result
 
-#print(get_column("date"))
+# prints average value of selected albums
+def get_average(album):
+    c = db.cursor()
+    c.execute("select avg(popularity) FROM songs WHERE album = Lover GROUP BY album")
+    result = c.fetchall()
+    c.close()
+    return result
+
+print(get_average("Lover"))

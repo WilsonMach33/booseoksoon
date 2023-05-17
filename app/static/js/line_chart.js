@@ -4,12 +4,12 @@ var width = 1000,
     margin = { top: 20, right: 20, bottom: 300, left: 50 };
 
 // set up song data
-const songdata=[];
+// const songdata=[];
 
-for(let i=0; i<songs.length/2;i++){
-    const a = {xvalue: songs[i], yvalue: songs[songs.length/2+i]};
-    songdata.push(a);
-}
+// for(let i=0; i<songs.length/2;i++){
+//     const a = {xvalue: songs[i], yvalue: songs[songs.length/2+i]};
+//     songdata.push(a);
+// }
 
 //function
 function LineChart(data){
@@ -85,4 +85,5 @@ function LineChart(data){
 }
 
 // funtion test
-LineChart(songdata);
+// LineChart(songdata);
+console.log(songdata);
