@@ -22,6 +22,21 @@ def model_all():
             dataDict[albumName].append(row["name"])
     return dataDict
 
+def model_all_specified(arr):
+    dataDict = {}
+    with open('spotify_taylorswift.csv') as f:
+        r = csv.DictReader(f)
+        for row in r:
+            song_elements = []
+            albumName = row["album"]
+            if (albumName not in dataDict):
+                dataDict[albumName] = []
+            song_elements.append(row["name"])
+            for element in arr:
+                song_elements.append(row[element])
+            dataDict[albumName].append(song_elements)
+    return dataDict
+
 def rand_func():
     rand = random.randint(0,170)
     return rand
@@ -65,6 +80,26 @@ def find_closest(arr):
         #loop through each song
     return result
 
+def find_closest_2(arr):
+    #initializing array to set point values for a song
+    points = []
+    dataDict = model_all_specified(["danceability", "acousticness", "energy", "liveness"])
+    for album in dataDict:
+        for song in dataDict[album]:
+            songName = song[0]
+            songPoints = 0
+            for num in range(len(arr)):
+                songPoints += (float(song[num+1])/arr[num])
+            points.append([songName, songPoints])
+    topSong = ""
+    topPoints = 100
+    for song in points:
+        if abs(song[1]-4)<topPoints:
+            topPoints = abs(song[1]-4)
+            topSong = song[0]
+    return topSong
+
+print(find_closest_2([0.58, 0.575, 0.491, 0.121]))
 
 def buzzfeed():
     quizDict = {}
