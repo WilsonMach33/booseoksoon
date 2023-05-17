@@ -54,7 +54,7 @@ def find_closest_one(col, val):
 #each category should be scaled to 100 
 #all points are added up at the end, and the song(s) with highest points are returned  
 #INPUT: array of val for cols in this order [danceability, acouticness, energy, liveness]
-def find_closest(arr)
+def find_closest(arr):
     result = []
     index = 0
     while (index <= 170):
