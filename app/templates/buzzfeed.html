@@ -30,10 +30,12 @@
             {% for question in data %}
                 <div class="card-header"> {{question}} </div>
                 <div class="card-body">
+                    {% for song in data[question] %}
                     <input class="form-check-input" type="radio" id="choice">
                     <label class="form-check-label" for="choice">
-                        {{[data][question]}}
+                        {{song}}
                     </label>
+                    {% endfor %}
                 </div>
             {% endfor %}
         </div>
