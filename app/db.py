@@ -148,4 +148,4 @@ def get_average(album):
     c.close()
     return result
 
-#print(get_average("Lover"))
+print(get_average("Lover"))
