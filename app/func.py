@@ -89,17 +89,19 @@ def find_closest_2(arr):
             songName = song[0]
             songPoints = 0
             for num in range(len(arr)):
-                songPoints += (float(song[num+1])/arr[num])
+                songPoints += abs(1.0-(float(song[num+1])/arr[num]))
             points.append([songName, songPoints])
     topSong = ""
     topPoints = 100
     for song in points:
-        if abs(song[1]-4)<topPoints:
-            topPoints = abs(song[1]-4)
+        if (song[1]<topPoints):
+            topPoints = song[1]
             topSong = song[0]
     return topSong
 
 print(find_closest_2([0.58, 0.575, 0.491, 0.121]))
+print(find_closest_2([0.57, 0.57, 0.49, 0.1]))
+print(find_closest_2([0.3, 0.34, 0.67, 0.1]))
 
 def buzzfeed():
     quizDict = {}
