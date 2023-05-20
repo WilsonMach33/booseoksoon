@@ -61,9 +61,12 @@ def analysis_page():
         return redirect(url_for("login"))
     session_user = F"{get_username(session['ID'])}"
 
-    title = get_column("title")
-    popp = get_column("popularity")
-    data = title+popp
+    data = get_column("album")
+    # print(data)
+    # table = []
+    # for i in album:
+    #     table += get_average("popularity", str(i))
+    # data = album + table
     return render_template("analysis.html", user=session_user, data=data)
 
 @app.route("/buzzfeed", methods=["GET", "POST"])

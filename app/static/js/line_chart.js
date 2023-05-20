@@ -4,86 +4,85 @@ var width = 1000,
     margin = { top: 20, right: 20, bottom: 300, left: 50 };
 
 // set up song data
-// const songdata=[];
+const songdata=[];
 
-// for(let i=0; i<songs.length/2;i++){
-//     const a = {xvalue: songs[i], yvalue: songs[songs.length/2+i]};
-//     songdata.push(a);
-// }
+for(let i=0; i<songs.length/2;i++){
+    const a = {xvalue: songs[i], yvalue: songs[songs.length/2+i]};
+    songdata.push(a);
+}
 
 //function
 function LineChart(data){
-  // create SVG and make it hold chart
+  // Create the SVG element and append a group element to hold the chart
   var svg = d3.select("#chart")
     .attr("width", width)
     .attr("height", height);
 
   var chart = svg.append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  // make x scale with d.xvalue as domain (range = width)
+  // Define the x-scale as an ordinal scale with the song titles as domain values
   var x = d3.scaleBand()
-    .domain(data.map(function(d) { return d.xvalue; }))
-    .range([0, width - margin.left - margin.right])
-    .padding(0.1);
+  .domain(data.map(function(d) { return d.xvalue; }))
+  .range([0, width - margin.left - margin.right])
+  .padding(0.1);
 
-  // make y scale with d.yvalue as [0,max y.value] (range = height)
+  // Define the y-scale as a linear scale with the maximum popularity value as the domain
   var y = d3.scaleLinear()
-    .domain([0, d3.max(data, function(d) { return d.yvalue; })])
-    .range([height - margin.top - margin.bottom, 0])
-    .nice();
+  .domain([0, d3.max(data, function(d) { return d.yvalue; })])
+  .range([height - margin.top - margin.bottom, 0])
+  .nice();
 
-  // make x axis
+  // Add the x-axis to the chart
   chart.append("g")
-    .attr("class", "x axis")
-    .attr("transform", "translate(0," + (height - margin.top - margin.bottom) + ")")
-    .call(d3.axisBottom(x))
-    .selectAll("text")
-      .attr("y", -5)
-      .attr("x", -130)
-      .style("text-anchor", "middle")
-      .attr("transform", "rotate(-90)")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + (height - margin.top - margin.bottom) + ")")
+  .call(d3.axisBottom(x))
+  .selectAll("text")
+    .attr("y", -5)
+    .attr("x", -130)
+    .style("text-anchor", "middle")
+    .attr("transform", "rotate(-90)")
 
-  // make y axis
+  // Add the y-axis to the chart
   chart.append("g")
-    .attr("class", "y axis")
-    .call(d3.axisLeft(y).ticks(5))
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Popularity");
+  .attr("class", "y axis")
+  .call(d3.axisLeft(y).ticks(5))
+  .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 6)
+    .attr("dy", ".71em")
+    .style("text-anchor", "end")
+    .text("Popularity");
 
-  // draw horizontal lines for each y-axis tick
+  // Draw horizontal lines for each y-axis tick
   chart.append("g")
-    .attr("class", "grid")
-    .call(d3.axisLeft(y)
-      .tickSize(-width+75)
-      .tickFormat("")
-    )
+  .attr("class", "grid")
+  .call(d3.axisLeft(y)
+    .tickSize(-width+75)
+    .tickFormat("")
+  )
 
-  // draw vertical lines for each x-axis tick
+  // Draw vertical lines for each x-axis tick
   chart.append("g")
-    .attr("class", "grid")
-    .attr("transform", "translate(0," + (height-50) + ")")
-    .call(d3.axisBottom(x)
-      .tickSize(-height+50)
-      .tickFormat("")
-    )
+  .attr("class", "grid")
+  .attr("transform", "translate(0," + (height-50) + ")")
+  .call(d3.axisBottom(x)
+    .tickSize(-height+50)
+    .tickFormat("")
+  )
 
-  // add the line to the chart (line chart line)
+  // Add the line to the chart
   var line = d3.line()
-    .x(function(d) { return x(d.xvalue) + x.bandwidth() / 2; })
-    .y(function(d) { return y(d.yvalue); });
+  .x(function(d) { return x(d.xvalue) + x.bandwidth() / 2; })
+  .y(function(d) { return y(d.yvalue); });
 
-  // add line to chart
   chart.append("path")
-    .datum(data)
-    .attr("class", "line")
-    .attr("d", line);
+  .datum(data)
+  .attr("class", "line")
+  .attr("d", line);
 }
 
-// funtion test
 // LineChart(songdata);
-console.log(songdata);
+// console.log(songdata);
+console.log(songs);
