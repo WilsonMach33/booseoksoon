@@ -171,4 +171,4 @@ for i in album:
     #     data += [i, j, get_average(j, str(i)[2: len(str(i))-3])]
     print([i, get_average("length", str(i)[2: len(str(i))-3])])
 
-print(data)
+#print(data)

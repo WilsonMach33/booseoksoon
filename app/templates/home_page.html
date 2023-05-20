@@ -30,13 +30,14 @@
     </div> -->
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"> TAYLOR SWIFT </a>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light pl-3">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="/"> TAYLOR SWIFT </a>
       
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home </a>
+              <a class="nav-link" href="/">Home </a>
             </li>
 
             <li class="nav-item active">
@@ -50,18 +51,19 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/profile"> Profile </a>
             </li>
-          </ul>
+        </div>
+        </ul>
+        <ul class="navbar-nav d-flex justify-content-end flex-wrap ms-md-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/logout"> Logout</a>
+            </li>
+        </ul>
         </div>
       </nav>
     
-    <!-- log out -->
+    <br>
 
-    <div class="d-flex justify-content-center">
-        <form class="logout-form">
-            <button class="button btn-lg btn-outline-primary" formaction="/logout">Logout</button>
-        </form>
-    </div>
-    <div>
+    <div class="m-2"> 
         <table id="data" class="table align-middle">
             <tr class="table-danger">
                 <th>ALBUM</th>

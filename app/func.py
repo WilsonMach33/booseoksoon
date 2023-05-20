@@ -99,9 +99,9 @@ def find_closest_2(arr):
             topSong = song[0]
     return topSong
 
-print(find_closest_2([0.58, 0.575, 0.491, 0.121]))
-print(find_closest_2([0.57, 0.57, 0.49, 0.1]))
-print(find_closest_2([0.3, 0.34, 0.67, 0.1]))
+#print(find_closest_2([0.58, 0.575, 0.491, 0.121]))
+#print(find_closest_2([0.57, 0.57, 0.49, 0.1]))
+#print(find_closest_2([0.3, 0.34, 0.67, 0.1]))
 
 def buzzfeed():
     quizDict = {}

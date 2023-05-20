@@ -14,6 +14,39 @@
     </head>
 
     <body>
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light pl-3">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="/"> TAYLOR SWIFT </a>
+          
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home </a>
+                </li>
+    
+                <li class="nav-item active">
+                    <a class="nav-link" href="/analysis"> Analysis </a>
+                  </li>
+                
+                <li class="nav-item active">
+                    <a class="nav-link" href="/buzzfeed"> Buzzfeed </a>
+                </li>
+    
+                <li class="nav-item active">
+                    <a class="nav-link" href="/profile"> Profile </a>
+                </li>
+            </div>
+            </ul>
+            <ul class="navbar-nav d-flex justify-content-end flex-wrap ms-md-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/logout"> Logout</a>
+                </li>
+            </ul>
+            </div>
+          </nav>
+        
+        <br>
+        
         <svg id="chart"></svg>
         <script type="text/javascript">
             var songs = {{data|tojson}};
