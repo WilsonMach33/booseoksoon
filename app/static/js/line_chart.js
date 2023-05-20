@@ -1,15 +1,26 @@
 // set chart dimensions
 var width = 1000,
-    height = 500,
-    margin = { top: 20, right: 20, bottom: 300, left: 50 };
+  height = 500,
+  margin = { top: 20, right: 20, bottom: 300, left: 50 };
 
 // set up song data
-const songdata=[];
+var column = ["length", "popularity", "danceability", "acousticness", 
+"energy", "instrumentalness", "liveness", "loudness", 
+"speechiness", "valence","tempo"]
 
-for(let i=0; i<songs.length/2;i++){
-    const a = {xvalue: songs[i], yvalue: songs[songs.length/2+i]};
-    songdata.push(a);
+var album = ["Taylor Swift", "Speak Now (Deluxe Package)", "Red (Deluxe Edition)",
+"1989 (Deluxe)", "reputation", "Lover", "folklore (deluxe version)",
+"evermore (deluxe version)", "Fearless (Taylor's Version)"]
+
+const songdata=[];
+for(int i=0; i<column.length; i++){
+  songdata+=[]
 }
+  
+// for(let i=0; i<9; i++){
+//     const a = {xvalue: songs[i], yvalue: songs[9+i*11]};
+//     lengthdata.push(a);
+// }
 
 //function
 function LineChart(data){
@@ -84,5 +95,5 @@ function LineChart(data){
 }
 
 // LineChart(songdata);
-// console.log(songdata);
-console.log(songs);
+console.log(lengthdata);
+console.log(songs)

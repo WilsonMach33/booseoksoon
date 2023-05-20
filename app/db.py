@@ -132,21 +132,43 @@ def get_col():
 
 # print(get_col())
 
-# get all column data
+# get all distinct column data
 def get_column(column_name):
     c = db.cursor()
-    column_name = str(column_name)
-    c.execute("select distinct(?) FROM songs", (column_name))
+    # column_name = str(column_name)
+    c.execute("select distinct " + str(column_name) + " FROM songs;")
     result = c.fetchall()
     c.close()
     return result
 
-# prints average value of selected albums
+# prints average value of selected album
+# def get_average(column, album):
+#     c = db.cursor()
+#     c.execute("select avg(" + column + ") FROM songs GROUP BY album HAVING album = '" + album + "'")
+#     result = c.fetchall()
+#     c.close()
+#     return result
+
+
 def get_average(column, album):
     c = db.cursor()
-    c.execute("select avg(" + column + ") FROM songs GROUP BY album HAVING album = '" + album + "'")
+    c.execute("select avg(" + column + ") FROM songs GROUP BY album HAVING album = ?", (album,))
     result = c.fetchall()
     c.close()
     return result
 
-print(get_column("album"))
+
+data = get_column("album")
+album = get_column("album")
+column = ["length", "popularity", "danceability", "acousticness", 
+        "energy", "instrumentalness", "liveness", "loudness", 
+        "speechiness", "valence","tempo"]
+
+data = []
+data +=album
+for i in album:
+    #  for j in column:
+    #     data += [i, j, get_average(j, str(i)[2: len(str(i))-3])]
+    print([i, get_average("length", str(i)[2: len(str(i))-3])])
+
+print(data)

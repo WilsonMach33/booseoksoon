@@ -62,11 +62,18 @@ def analysis_page():
     session_user = F"{get_username(session['ID'])}"
 
     data = get_column("album")
-    # print(data)
-    # table = []
-    # for i in album:
-    #     table += get_average("popularity", str(i))
-    # data = album + table
+    album = get_column("album")
+    column = ["length", "popularity", "danceability", "acousticness", 
+            "energy", "instrumentalness", "liveness", "loudness", 
+            "speechiness", "valence","tempo"]
+
+    data = []
+    data +=album
+    for i in album:
+        for j in column:
+            datum = get_average(j, str(i)[2: len(str(i))-3])
+            data+=datum
+
     return render_template("analysis.html", user=session_user, data=data)
 
 @app.route("/buzzfeed", methods=["GET", "POST"])
