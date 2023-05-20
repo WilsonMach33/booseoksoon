@@ -89,21 +89,21 @@ def buzzfeed_page():
         for question in buzz:
             #vals is returned as a string, so get in list format
             vals = request.form.get(question)
+            if (vals == None):
+                return redirect(url_for("buzzfeed_page"))
             vals = vals[1:len(vals)-1]
             vals = vals.split(", ")
-            #print(vals)
             index = 0
             while (index < 4):
                 result[index] = float(result[index]) + float(vals[index])
                 index += 1
-                
-        #print(result)
         #get average 
         index = 0
         while (index < 4):
             result[index] = result[index]/4
             index += 1
         song = find_closest_2(result)
+        add_buzzfeed(session_user, song, result)
         return render_template("buzzfeed.html", data=buzz, user=session_user, answer=True, result=song)
 
     return render_template("buzzfeed.html", data=buzz, user=session_user, answer=False)

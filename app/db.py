@@ -6,7 +6,8 @@ db = sqlite3.connect(DB_FILE, check_same_thread=False)
 c = db.cursor() # Create the three tables if they dont exist yet
 c.executescript("""
     create TABLE if NOT EXISTS user(u_id int primary key, username varchar(20), password varchar(30));
-    create TABLE if NOT EXISTS songs(u_id int primary key, title text, album text, date text, length int, popularity float, danceability float, acousticness float, energy float, instrumentalness float, liveness float, loudness float, speechiness float, valence float, tempo float)
+    create TABLE if NOT EXISTS songs(u_id int primary key, title text, album text, date text, length int, popularity float, danceability float, acousticness float, energy float, instrumentalness float, liveness float, loudness float, speechiness float, valence float, tempo float);
+    create TABLE if NOT EXISTS buzzfeed(user_id int, song_id int, danceability float, acousticness float, energy float, liveness float)
 """)
 c.close()
 
@@ -172,3 +173,20 @@ for i in album:
     print([i, get_average("length", str(i)[2: len(str(i))-3])])
 
 #print(data)
+
+##buzzfeed
+def add_buzzfeed(user, song, vals):
+    c = db.cursor()
+    c.execute("insert into buzzfeed values(?, ?, ?, ?, ?, ?)", (user, song, vals[0], vals[1], vals[2], vals[3]))
+    print(user)
+    db.commit()
+    c.close()
+
+add_buzzfeed(1,1,[0.1,0.1,0.1,0.1])
+
+def get_buzzfeed(user):
+    c = db.cursor()
+    c.execute("select * FROM buzzfeed where u_id = ?", (user, ))
+    result = c.fetchall
+    c.close()
+    return result
