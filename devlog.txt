@@ -182,3 +182,13 @@ Wilson --- 05/18/23 9:26
 --------------------------------------------------------------
 -fixed line_chart.js
 --------------------------------------------------------------
+
+April --- 05/20/23 6:44 
+--------------------------------------------------------------
+-Got buzzfeed to work!!!!
+    -Reformatted how buzzfeed() would take in data
+    -Each question is a key in a dictionary and each answer choice gives a certain amount of values to each category
+    -Average of the points is calucalted and the closest song is found
+-Working on getting buzzfeed results added to database
+-Moved logout button to the right of the navbar
+--------------------------------------------------------------
