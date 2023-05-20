@@ -63,12 +63,12 @@
             </div> -->
 
             {% for question in data %}
-                <div class="card-header"> {{data[question][0][0]}} </div>
+                <div class="card-header"> {{question}} </div>
                 <div class="card-body">
-                    {% for option in data[question][1] %}
-                    <input class="form-check-input" type="radio" id="choice">
+                    {% for option in data["" + question] %}
+                    <input class="form-check-input" type="radio" id="choice" value="{{option[1]}}" name="{{question}}">
                     <label class="form-check-label" for="choice">
-                        {{option}}
+                        {{option[0]}}
                     </label>
                     {% endfor %}
                 </div>
@@ -83,9 +83,12 @@
 
         <br>
         <div>
+            {% if answer == True %}
+                <h> Results </h>
+
+                <p> You are most like {{result}}</p>
             
-
-
+            {% endif %}
         </div>
         
     </div>

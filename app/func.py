@@ -80,6 +80,7 @@ def find_closest(arr):
         #loop through each song
     return result
 
+#INPUT: [danceability, acouticness, energy, liveness]
 def find_closest_2(arr):
     #initializing array to set point values for a song
     points = []
@@ -103,17 +104,26 @@ def find_closest_2(arr):
 #print(find_closest_2([0.57, 0.57, 0.49, 0.1]))
 #print(find_closest_2([0.3, 0.34, 0.67, 0.1]))
 
+#def buzzfeed():
+#    quizDict = {}
+#    quizDict[1] = [["danceability"], ["click me", "no", "no", "no"], [0.58, 0, 0, 0]]
+#    quizDict[2] = [["acousticness"], ["click me", "no", "no", "no"], [0.575, 0, 0, 0]]
+#    quizDict[3] = [["energy"], ["click me", "no", "no", "no"], [0.491, 0, 0, 0]]
+#    quizDict[4] = [["liveness"], ["click me", "no", "no", "no"], [0.121, 0, 0, 0]]
+#    # this song is supposed to be 'Tim McGraw'
+#    return quizDict
+
+#answer choice + values it contributes for each category  ["danceability", "acousticness", "energy", "liveness"]
+
 def buzzfeed():
-    quizDict = {}
-    quizDict[1] = [["danceability"], ["click me", "no", "no", "no"], [0.58, 0, 0, 0]]
-    quizDict[2] = [["acousticness"], ["click me", "no", "no", "no"], [0.575, 0, 0, 0]]
-    quizDict[3] = [["energy"], ["click me", "no", "no", "no"], [0.491, 0, 0, 0]]
-    quizDict[4] = [["liveness"], ["click me", "no", "no", "no"], [0.121, 0, 0, 0]]
-    # this song is supposed to be 'Tim McGraw'
-    return quizDict
-
-buzzfeed()
-
+    #questions = ["q1", "q2", "q3", "q4"]
+    quizDict = {
+        "q1": [["one", [0.58, 0.575, 0.491, 0.121]], ["two", [0, 0, 0, 0]], ["three", [0, 0, 0, 0]], ["four", [0, 0, 0, 0]]],
+        "q2": [["eleven", [0, 0.575, 0, 0]], ["twelve", [0, 0, 0, 0]], ["thirteen", [0, 0, 0, 0]], ["fourteen", [0, 0, 0, 0]]],
+        "q3": [["twenty", [0, 0, 0.491, 0]], ["twenty-one", [0, 0, 0, 0]], ["twenty-two", [0, 0, 0, 0]], ["twenty-three", [0, 0, 0, 0]]],
+        "q4": [["thirty", [0, 0, 0, 0.121]], ["thirty-one", [0, 0, 0, 0]], ["thirty-two", [0, 0, 0, 0]], ["thirty-three", [0, 0, 0, 0]]]
+    }
+    return (quizDict)
 
 
-    
+#buzzfeed()

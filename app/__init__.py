@@ -78,12 +78,35 @@ def analysis_page():
 
 @app.route("/buzzfeed", methods=["GET", "POST"])
 def buzzfeed_page():
-    quizDict = buzzfeed()
+    buzz = buzzfeed()
     if(session.get("ID", None) == None):
         return redirect(url_for("login"))
     session_user = F"{get_username(session['ID'])}"
 
-    return render_template("buzzfeed.html", data=quizDict, user=session_user)
+    if(request.method == "POST"):
+        #add up values for all selections
+        result = [0, 0, 0, 0]
+        for question in buzz:
+            #vals is returned as a string, so get in list format
+            vals = request.form.get(question)
+            vals = vals[1:len(vals)-1]
+            vals = vals.split(", ")
+            #print(vals)
+            index = 0
+            while (index < 4):
+                result[index] = float(result[index]) + float(vals[index])
+                index += 1
+                
+        #print(result)
+        #get average 
+        index = 0
+        while (index < 4):
+            result[index] = result[index]/4
+            index += 1
+        song = find_closest_2(result)
+        return render_template("buzzfeed.html", data=buzz, user=session_user, answer=True, result=song)
+
+    return render_template("buzzfeed.html", data=buzz, user=session_user, answer=False)
 
 @app.route("/favorite_songs", methods=["GET", "POST"])
 def favorite_songs_page():
