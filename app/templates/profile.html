@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="../static/css/bss.css">
+        <script src="/static/style.js"></script>
     </head>
 
     <body>
@@ -45,11 +46,23 @@
             </div>
           </nav>
         
-        <div class = "m-3">
-            <h> USER: {{user}}</h>
-
+        <div class = "m-3 d-flex align-items-center flex-column bg-dark text-white" style="padding:20px">
+            <h1> WELCOME, {{user}}</h1>
+            <br>
+            <!-- profile picture-->
+            <img src="https://i.pinimg.com/originals/07/80/84/078084612960b7ccde1e109e5ed3d3d7.jpg" height="100" id="profile-pic" class="rounded-circle"/>
+            <input id="file" type="file" onchange="getImage(event)"/>
+            <!---->
         </div>
-
+        <br>
+        <div class="d-flex align-items-center flex-column">
+            <h1>Buzzfeed Results:</h1>
+            <ol class="list-group">
+            {% for song in buzzfeedData %}
+            <li class="list-group-item"> {{song[0]}} </li>
+            {% endfor %}
+            </ol>
+        </div>
     </body>
 
     <script src="../static/js/test.js"></script>

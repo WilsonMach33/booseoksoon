@@ -121,8 +121,8 @@ def profile_page():
     if(session.get("ID", None) == None):
         return redirect(url_for("login"))
     session_user = F"{get_username(session['ID'])}"
-
-    return render_template("profile.html", user=session_user)
+    buzzData = get_buzzfeed(session_user)
+    return render_template("profile.html", buzzfeedData=buzzData, user=session_user)
 
 @app.route("/user_stats", methods=["GET", "POST"])
 def user_stats_page():

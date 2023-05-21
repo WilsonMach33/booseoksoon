@@ -186,7 +186,8 @@ add_buzzfeed(1,1,[0.1,0.1,0.1,0.1])
 
 def get_buzzfeed(user):
     c = db.cursor()
-    c.execute("select * FROM buzzfeed where u_id = ?", (user, ))
-    result = c.fetchall
+    c.execute("select song_id FROM buzzfeed where user_id = ?", (user, ))
+    result = c.fetchall()
     c.close()
+    print(result)
     return result

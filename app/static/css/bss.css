@@ -10,5 +10,8 @@
   background-color: rgb(253, 205, 205);
 }
 
-
+form input[type="file"] {
+  display: none;
+  cursor: pointer;
+}
 /*# sourceMappingURL=bss.css.map */
