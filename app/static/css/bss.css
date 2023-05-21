@@ -10,8 +10,51 @@
   background-color: rgb(253, 205, 205);
 }
 
-form input[type="file"] {
-  display: none;
-  cursor: pointer;
+.navbar {
+  color: rgb(174, 192, 252);
+  background-color: navy;
+  float: left;
+  font-size: 20px;
 }
+.navbar a:hover {
+  background-color: rgb(174, 192, 252);
+  color: navy;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  fill: #666;
+}
+
+.axis .domain {
+  display: none;
+}
+
+.grid line {
+  stroke: lightgray;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+
+.chart {
+  position: relative;
+  left: 150px;
+  top: 20px;
+}
+
 /*# sourceMappingURL=bss.css.map */

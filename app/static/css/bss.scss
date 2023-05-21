@@ -31,3 +31,42 @@ $background-color5: rgb(148,225,234);
 .navbar{
     @include navigation;
 }
+
+
+// chart
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+}
+  
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    fill: #666;
+}
+
+.axis .domain {
+    display: none;
+}
+
+.grid line {
+    stroke: lightgray;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+}
+
+
+.chart{
+    position: relative;
+    left: 150px; 
+    top: 20px;
+}
