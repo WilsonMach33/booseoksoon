@@ -28,6 +28,10 @@ $background-color5: rgb(148,225,234);
     background-color: $background-color1;
 }
 
+.analysis_body{
+    background-color: black;
+}
+
 .navbar{
     @include navigation;
 }
@@ -67,6 +71,28 @@ $background-color5: rgb(148,225,234);
 
 .chart{
     position: relative;
-    left: 150px; 
-    top: 20px;
+    left: 180px; 
+    top: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;    
+}
+
+.carousel{
+    top: 10px;
+}
+
+.carousel-control-prev, 
+.carousel-control-next{
+    background-color: black;
+    width: 100px;
+}
+
+.carousel-indicators li{
+    background-color: black;
+}
+
+.carousel-indicators .active {
+    background-color: red;
 }

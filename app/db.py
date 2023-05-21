@@ -158,22 +158,6 @@ def get_average(column, album):
     c.close()
     return result
 
-
-data = get_column("album")
-album = get_column("album")
-column = ["length", "popularity", "danceability", "acousticness", 
-        "energy", "instrumentalness", "liveness", "loudness", 
-        "speechiness", "valence","tempo"]
-
-data = []
-data +=album
-for i in album:
-    #  for j in column:
-    #     data += [i, j, get_average(j, str(i)[2: len(str(i))-3])]
-    print([i, get_average("length", str(i)[2: len(str(i))-3])])
-
-#print(data)
-
 ##buzzfeed
 def add_buzzfeed(user, song, vals):
     c = db.cursor()
