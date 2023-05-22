@@ -114,7 +114,16 @@ def favorite_songs_page():
         return redirect(url_for("login"))
     session_user = F"{get_username(session['ID'])}"
 
-    return render_template("find_song.html", user=session_user)
+    if(request.method=="POST"):
+        dance = float(request.form.get("dance_range"))/100
+        acoust = float(request.form.get("acoust_range"))/100
+        energy = float(request.form.get("energy_range"))/100
+        live = float(request.form.get("live_range"))/100
+        song = find_closest_2([dance, acoust, energy, live])
+    else:
+        song = ""
+
+    return render_template("find_song.html", similar_song=song, user=session_user)
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile_page():

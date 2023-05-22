@@ -205,6 +205,14 @@ April --- 05/20/23 6:44
 -Moved logout button to the right of the navbar
 --------------------------------------------------------------
 
+Jasmine --- 05/20/23 20:00
+--------------------------------------------------------------
+- Added stats to user's profile
+- Trying to add a profile picture option and the ability to
+change one
+- Added Buzzfeed results to profile
+--------------------------------------------------------------
+
 Wilson --- 05/21/23 20:26
 --------------------------------------------------------------
 -finished carousel 
@@ -216,4 +224,11 @@ DID NOT add instrumentalness due to unclean/wonky data
 April --- 05/21/23 23:09 
 --------------------------------------------------------------
 -working on some sliders
+--------------------------------------------------------------
+
+Jasmine --- 05/21/ 23:00
+--------------------------------------------------------------
+-sliders work as a form and can output a song when submit
+button is clicked
+-some beautification
 --------------------------------------------------------------

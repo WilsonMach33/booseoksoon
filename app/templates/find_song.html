@@ -1,85 +1,83 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Favorite Songs</title>
-        <!-- insert CDN connection  -->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link rel="stylesheet" href="../static/css/bss.css">
-        <script src="../static/js/slider.js" defer> </script>
-    </head>
 
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Favorite Songs</title>
+    <!-- insert CDN connection  -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../static/css/bss.css">
+    <script src="../static/js/slider.js" defer> </script>
+</head>
 
+<body style="background-color: #ADD8E6;">
+    <div class="d-flex align-items-center flex-column">
         <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light pl-3">
             <div class="container-fluid">
-            <a class="navbar-brand" href="/"> TAYLOR SWIFT </a>
-          
-            <div class="collapse navbar-collapse">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/">Home </a>
-                </li>
-    
-                <li class="nav-item active">
-                    <a class="nav-link" href="/analysis"> Analysis </a>
-                  </li>
-                
-                <li class="nav-item active">
-                    <a class="nav-link" href="/buzzfeed"> Buzzfeed </a>
-                </li>
-    
-                <li class="nav-item active">
-                    <a class="nav-link" href="/profile"> Profile </a>
-                </li>
-    
-                <li class="nav-item active">
-                    <a class="nav-link" href="/find_song"> Find Song </a>
-                </li>
-    
+                <a class="navbar-brand" href="/"> TAYLOR SWIFT </a>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Home </a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/analysis"> Analysis </a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/buzzfeed"> Buzzfeed </a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/profile"> Profile </a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/find_song"> Find Song </a>
+                        </li>
+
+                </div>
+                </ul>
+                <ul class="navbar-nav d-flex justify-content-end flex-wrap ms-md-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/logout"> Logout</a>
+                    </li>
+                </ul>
             </div>
-            </ul>
-            <ul class="navbar-nav d-flex justify-content-end flex-wrap ms-md-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/logout"> Logout</a>
-                </li>
-            </ul>
-            </div>
-          </nav>
-    
-        
+        </nav>
         <br>
-        
-        <h> Find Song! </h>
-        <br>
-        <h> . </h>
-        <p> Danceability</p>
-             <div class="slider-container">
-            <input type="range" min="1" max="100" value="50" class="slider" id="dance_range">
-            <p>Value: <span id="dance_value"></span></p>
+        <form action="/find_song" method="POST" class="find_song_page d-flex align-items-center flex-column">
+            <div class="d-flex flex-row">
+                <h1 style="padding-right: 10px;"> {{similar_song}} </h1>
+                <button type="submit" class="btn" value="submit"> Find Song </button>
             </div>
-        <p> Acousticness </p>
-             <div class="slider-container">
-            <input type="range" min="1" max="100" value="50" class="slider" id="acoust_range">
-            <p>Value: <span id="acoust_value"></span></p>
-            </div>
-        <p> Energy </p>
-             <div class="slider-container">
-            <input type="range" min="1" max="100" value="50" class="slider" id="energy_range">
-            <p>Value: <span id="energy_value"></span></p>
-            </div>
-        <p> Liveness </p>
+            <br>
+            <h3 class="find_song_text">DANCEABILITY: <span id="dance_value"></span></h3>
             <div class="slider-container">
-            <input type="range" min="1" max="100" value="50" class="slider" id="live_range">
-            <p>Value: <span id="live_value"></span></p>
+                <input type="range" min="1" max="100" value="50" class="slider" name="dance_range" id="dance_range">
             </div>
+            <h3 class="find_song_text">ACOUSTICNESS: <span id="acoust_value"></span></h3>
+            <div class="slider-container">
+                <input type="range" min="1" max="100" value="50" class="slider" name="acoust_range" id="acoust_range">
+            </div>
+            <h3 class="find_song_text">ENERGY: <span id="energy_value"></span></h3>
+            <div class="slider-container">
+                <input type="range" min="1" max="100" value="50" class="slider" name="energy_range" id="energy_range">
+            </div>
+            <h3 class="find_song_text">LIVENESS: <span id="live_value"></span></h3>
+            <div class="slider-container">
+                <input type="range" min="1" max="100" value="50" class="slider" name="live_range" id="live_range">
+            </div>
+        </form>
+    </div>
 
-          
-
-    </body>
+</body>
 
 </html>
