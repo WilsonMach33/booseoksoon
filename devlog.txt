@@ -183,6 +183,18 @@ Wilson --- 05/18/23 9:26
 -fixed line_chart.js
 --------------------------------------------------------------
 
+Wilson --- 05/19/23 9:26
+--------------------------------------------------------------
+-changed get_column(column_name) to only give distinct values
+-experimented with creating line charts through functions
+--------------------------------------------------------------
+
+Wilson --- 05/20/23 20:26
+--------------------------------------------------------------
+-added carousel 
+-added LineChart()
+--------------------------------------------------------------
+
 April --- 05/20/23 6:44 
 --------------------------------------------------------------
 -Got buzzfeed to work!!!!
@@ -191,4 +203,12 @@ April --- 05/20/23 6:44
     -Average of the points is calucalted and the closest song is found
 -Working on getting buzzfeed results added to database
 -Moved logout button to the right of the navbar
+--------------------------------------------------------------
+
+Wilson --- 05/21/23 20:26
+--------------------------------------------------------------
+-finished carousel 
+-finished adding all line charts
+
+DID NOT add instrumentalness due to unclean/wonky data
 --------------------------------------------------------------
