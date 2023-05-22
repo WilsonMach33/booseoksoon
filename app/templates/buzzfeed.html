@@ -54,7 +54,6 @@
     
         <div class="d-flex p-2">
         <form action="/buzzfeed" method="POST">
-        <div class="card">
             <!-- <div class="ques-container">Question</div>
             <div class="option-container">
                 <button class="option"> {{option1}} </button>
@@ -67,6 +66,7 @@
             </div> -->
 
             {% for question in data %}
+            <div class="card my-2 mx-1" style="width: 25rem;">
                 <div class="card-header"> {{question}} </div>
                 <div class="card-body">
                     {% for option in data["" + question] %}
@@ -77,8 +77,10 @@
                     <br>
                     {% endfor %}
                 </div>
+            </div>
+
+
             {% endfor %}
-        </div>
 
         <br>
 
