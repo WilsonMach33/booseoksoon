@@ -69,20 +69,26 @@
     <br>
 
     <div class="m-2"> 
-        <table id="data" class="table align-middle">
-            <tr class="table-danger">
-                <th>ALBUM</th>
-                <th>SONGS</th>
-            </tr>
-
-            {% for album in data %}
+        <table id="data" class="table align-middle table-hover table-striped table-bordered">
+            <thead>
+                <tr class="table-danger">
+                    <th>ALBUM</th>
+                    <th>SONGS</th>
+                </tr>    
+            </thead>
+            <tbody>
+                {% for album in data %}
                 <tr>
                     <th class="table-primary">{{album}}</th>
+                    <td>
                     {% for song in data[album] %}
-                        <td>{{song}}</td>
+                        {{song}}
+                        <br>
                     {% endfor %}
+                    </td>
                 </tr>
-            {% endfor %}
+                {% endfor %}
+            </tbody>
         </table>
     </div>
 
