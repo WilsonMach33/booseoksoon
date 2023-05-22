@@ -83,37 +83,37 @@
 }
 
 .slider-container {
-  width:80%;
-  outline:none;
-  padding:20px;
+  width: 80%;
+  outline: none;
+  padding: 20px;
 }
 
 .slider {
-  width:100%;
+  width: 100%;
   -webkit-appearance: none;
-  background-color:black;
-  height:50px;
+  background-color: black;
+  height: 50px;
 }
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width:25px;
-  height:25px;
-  cursor:pointer;
-  background-color:lightgreen;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-color: lightgreen;
 }
 
 .slider::-moz-range-thumb {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .find_song_page {
-  width:100%;
+  width: 100%;
 }
 
 .find_song_text {
-  color:#088F8F;
-  letter-spacing:10px;
+  color: #088F8F;
+  letter-spacing: 10px;
 }
 
 /*# sourceMappingURL=bss.css.map */

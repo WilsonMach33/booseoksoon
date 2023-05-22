@@ -72,7 +72,7 @@ for(let i=0; i<9; i++){
 
 // set chart dimensions
 var width = 1000,
-  height = 500,
+  height = 750,
   margin = { top: 20, right: 20, bottom: 250, left: 50 };
 
 function LineChart(data, chart_id, chart_title){
