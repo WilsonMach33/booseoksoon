@@ -47,6 +47,6 @@ http://127.0.0.1:5000
 ```
 
 ## Data
-###Taylor Swift Analysis
+### Taylor Swift Analysis
 Description: CSV containing information on all Taylor Swift songs up to 2021. That information includes the album, published date, popularity, liveness, danceability, acousticness, energy, and more. 
 Source: [Kaggle](https://www.kaggle.com/datasets/thespacefreak/taylor-swift-spotify-data)
