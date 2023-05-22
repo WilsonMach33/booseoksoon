@@ -12,12 +12,12 @@ This is an analysis of Taylor Swift's songs and song lyrics. This includes a pag
 ## Launch Codes
 #### 1) Clone the project
 ```
-git clone git@github.com:akitiss/WDMP-World-Domination-of-the-Magical-Pinks.git
+git clone git@github.com:WilsonMach33/booseoksoon.git
 ```
 
 #### 2) Navigate to root directory
 ``` 
-cd WDMP-World-Domination-of-the-Magical-Pinks/app
+cd booseoksoon/app
 ```
 
 #### 3) Create the virtual environment
