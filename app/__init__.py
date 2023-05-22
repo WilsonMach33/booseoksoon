@@ -108,13 +108,13 @@ def buzzfeed_page():
 
     return render_template("buzzfeed.html", data=buzz, user=session_user, answer=False)
 
-@app.route("/favorite_songs", methods=["GET", "POST"])
+@app.route("/find_song", methods=["GET", "POST"])
 def favorite_songs_page():
     if(session.get("ID", None) == None):
         return redirect(url_for("login"))
     session_user = F"{get_username(session['ID'])}"
 
-    return render_template("favorite_songs.html", user=session_user)
+    return render_template("find_song.html", user=session_user)
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile_page():

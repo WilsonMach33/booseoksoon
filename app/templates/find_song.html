@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="../static/css/bss.css">
-        <script src="../static/js/search_bar.js" defer> </script>
+        <script src="../static/js/slider.js" defer> </script>
     </head>
 
     <body>
@@ -48,22 +48,31 @@
         
         <br>
         
-        <div class = "ml-4">
-            <div class = "search-wrapper">
-                <label for ="search"> Search songs </label>
-                <input type="search" id="search">
+        <h> Find Song! </h>
+        <br>
+        <h> . </h>
+        <p> Danceability</p>
+             <div class="slider-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="dance_range">
+            <p>Value: <span id="dance_value"></span></p>
+            </div>
+        <p> Acousticness </p>
+             <div class="slider-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="acoust_range">
+            <p>Value: <span id="acoust_value"></span></p>
+            </div>
+        <p> Energy </p>
+             <div class="slider-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="energy_range">
+            <p>Value: <span id="energy_value"></span></p>
+            </div>
+        <p> Liveness </p>
+            <div class="slider-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="live_range">
+            <p>Value: <span id="live_value"></span></p>
             </div>
 
-            <div class = "search-results">
-                <template card-template>
-                    <div class="card p-2 m-2 w-25">
-                        <div class="card-header" card-header> song </div>
-                        <div class="card-body" card-body> album </div>
-                    </div>
-                </template>
-            </div>
-
-        </div>
+          
 
     </body>
 
