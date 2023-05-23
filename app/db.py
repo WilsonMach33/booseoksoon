@@ -70,6 +70,8 @@ def model_all_sql():
     db.commit()
     c.close()
 
+#model_all_sql()
+
 def get_title(id):
     c = db.cursor()
     c.execute("select title FROM songs WHERE u_id = ?", (id, ))
@@ -143,20 +145,17 @@ def get_column(column_name):
     return result
 
 # prints average value of selected album
-# def get_average(column, album):
-#     c = db.cursor()
-#     c.execute("select avg(" + column + ") FROM songs GROUP BY album HAVING album = '" + album + "'")
-#     result = c.fetchall()
-#     c.close()
-#     return result
-
-
 def get_average(column, album):
     c = db.cursor()
     c.execute("select avg(" + column + ") FROM songs GROUP BY album HAVING album = ?", (album,))
     result = c.fetchall()
     c.close()
     return result
+
+print(get_column("album"))
+print(get_average("popularity", "Lover"))
+
+
 
 ##buzzfeed
 def add_buzzfeed(user, song, vals):
@@ -166,7 +165,7 @@ def add_buzzfeed(user, song, vals):
     db.commit()
     c.close()
 
-add_buzzfeed(1,1,[0.1,0.1,0.1,0.1])
+# add_buzzfeed(1,1,[0.1,0.1,0.1,0.1])
 
 def get_buzzfeed(user):
     c = db.cursor()

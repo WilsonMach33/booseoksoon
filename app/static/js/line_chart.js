@@ -167,7 +167,5 @@ LineChart(speechinessdata, "#chart8", "Speechiness");
 LineChart(valencedata, "#chart9", "Valence");
 LineChart(tempodata, "#chart10", "Tempo");
 
-
-
-// console.log(poppdata);
-// console.log(songs);
+console.log(poppdata);
+console.log(songs);
