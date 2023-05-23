@@ -12,30 +12,34 @@
         <link rel="stylesheet" href="../static/css/bss.css">
     </head>
 
-    <body>
+    <body class="body">
         <div class="register-container p-5">
-            SIGN UP HERE
+            <div class="d-flex justify-content-center">
+                <h1>SIGN UP HERE</h1>
+            </div>
 
-            <form class="signup-form" action="/register" method="POST">
-                <div class="form-floating">
-                    <input class="form-control" type="text" name="username" placeholder="Username" required>
-                    <label for="floatingInput">Username</label>
-                </div>
-                
-                <div class="form-floating">
-                    <input class="form-control" type="password" name="password" placeholder="Password" required>
-                    <label for="floatingPassword">Password</label>
-                </div>
+            <div class="login-container d-flex justify-content-center">
+                <form class="signup-form" action="/register" method="POST">
+                    <div class="form-floating">
+                        <input class="form-control" type="text" name="username" placeholder="Username" required>
+                        <label for="floatingInput">Username</label>
+                    </div>
+                    <br>
+                    <div class="form-floating">
+                        <input class="form-control" type="password" name="password" placeholder="Password" required>
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <br>
+                    <div class="form-floating">
+                        <input class="form-control" type="password" name="confirmation" placeholder="Password" required>
+                        <label for="floatingPassword">Confirm Password</label>
+                    </div>
+                    <br>
+                    <input class="button" type="submit" name="signup" value="Sign up!">
     
-                <div class="form-floating">
-                    <input class="form-control" type="password" name="confirmation" placeholder="Password" required>
-                    <label for="floatingPassword">Confirm Password</label>
-                </div>
-                
-                <input class="" type="submit" name="signup" value="Sign up!">
-
-                <p>{{status}}</p>
-            </form>
+                    <p>{{status}}</p>
+                </form>
+            </div>
 
             <form class="login-form">
                 <p>Already have an account?</p>
