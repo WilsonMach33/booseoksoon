@@ -34,6 +34,7 @@ $background-color5: rgb(148,225,234);
 
 .navbar{
     @include navigation;
+    background-color: $background-color5;
 }
 
 
