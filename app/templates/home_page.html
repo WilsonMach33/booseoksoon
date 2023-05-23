@@ -78,11 +78,18 @@
                 </tr>    
             </thead>
             <tbody>
+                {% set image_index = namespace(i=1) %}
                 {% for album in data %}
                     <td class="table-primary" rowspan="{{data[album]|length+1}}">
                         {{album}}
                         <br>
-                        <img style="width: 341px; height:256px;" src="./static/assets/album-covers/9.jpeg">
+                        {% if image_index.i == 9 %}
+                            {% set image_name = image_index.i|string+".jpeg" %}
+                        {% else %}
+                            {% set image_name = image_index.i|string+".webp" %}
+                        {% endif %}
+                        <img style="width: 341px; height:341px;" src="./static/assets/album-covers/{{image_name}}">
+                        {% set image_index.i = image_index.i + 1 %}
                     </td>
                     {% for song in data[album] %}
                         <tr><td>{{song}}</td></tr>
