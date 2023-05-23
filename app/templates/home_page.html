@@ -78,15 +78,13 @@
             </thead>
             <tbody>
                 {% for album in data %}
-                <tr>
-                    <th class="table-primary">{{album}}</th>
-                    <td>
-                    {% for song in data[album] %}
-                        {{song}}
-                        <br>
-                    {% endfor %}
+                    <td class="table-primary" rowspan="{{data[album]|length+1}}">
+                        {{album}}
+                        <img src="/assets/album-covers/'9.jpeg'">
                     </td>
-                </tr>
+                    {% for song in data[album] %}
+                        <tr><td>{{song}}</td></tr>
+                    {% endfor %}
                 {% endfor %}
             </tbody>
         </table>
