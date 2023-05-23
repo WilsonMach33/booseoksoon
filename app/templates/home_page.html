@@ -81,7 +81,8 @@
                 {% for album in data %}
                     <td class="table-primary" rowspan="{{data[album]|length+1}}">
                         {{album}}
-                        <img src="./static/assets/album-covers/'9.jpeg'">
+                        <br>
+                        <img style="width: 341px; height:256px;" src="./static/assets/album-covers/9.jpeg">
                     </td>
                     {% for song in data[album] %}
                         <tr><td>{{song}}</td></tr>
