@@ -15,7 +15,7 @@
 
     <body>
      
-        <div class = "m-3 d-flex align-items-center flex-column bg-dark text-white" style="padding:20px">
+        <div class = "m-3 d-flex align-items-center flex-column text-white" style="padding:20px">
             <!--navbar-->
             <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light pl-3" style="width:100%">
                 <div class="container-fluid">
@@ -49,14 +49,16 @@
                 </div>
                 </div>
               </nav>
-            <!---->
-            <br>
-            <h1> WELCOME, {{user}}</h1>
-            <br>
-            <!-- profile picture-->
-            <img src="https://i.pinimg.com/originals/07/80/84/078084612960b7ccde1e109e5ed3d3d7.jpg" height="100" id="profile-pic" class="rounded-circle"/>
-            <input id="file" type="file" onchange="getImage(event)"/>
-            <!---->
+              <div class="bg-dark d-flex align-items-center flex-column text-white" style="width:100%; padding:30px;">
+                <!---->
+                <br>
+                <h1> WELCOME, {{user}}</h1>
+                <br>
+                <!-- profile picture-->
+                <img src="https://i.pinimg.com/originals/07/80/84/078084612960b7ccde1e109e5ed3d3d7.jpg" height="100" id="profile-pic" class="rounded-circle"/>
+                <input id="file" type="file" onchange="getImage(event)"/>
+                <!---->
+              </div>
         </div>
         <br>
         <div class="d-flex align-items-center flex-column">
