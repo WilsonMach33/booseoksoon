@@ -19,6 +19,7 @@
   background-color: navy;
   float: left;
   font-size: 20px;
+  background-color: rgb(148, 225, 234);
 }
 .navbar a:hover {
   background-color: rgb(174, 192, 252);
@@ -56,12 +57,11 @@
 }
 
 .chart {
-  position: relative;
-  left: 23%;
   top: 10px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 .carousel {
